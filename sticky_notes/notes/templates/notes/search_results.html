@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Search Results{% endblock %}
+
+{% block content %}
+<h2>Search Results</h2>
+{% if authors %}
+    {% for author in authors %}
+        <h3>{{ author.name }}</h3>
+        <ul>
+        {% for note in author.note_set.all %}
+            <li>
+                <a href="{% url 'view_note' note.id %}">{{ note.title }}</a>
+            </li>
+        {% endfor %}
+        </ul>
+    {% endfor %}
+{% else %}
+    <p>No authors found with the given name.</p>
+{% endif %}
+<a class="button" href="{% url 'index' %}">Back to notes</a>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Notes by {{ author.name }}{% endblock %}
+
+{% block content %}
+<h2>Notes by {{ author.name }}</h2>
+{% for note in notes %}
+    <div class="note">
+        <h2>{{ note.title }}</h2>
+        <p>{{ note.content }}</p>
+        <small>Created at: {{ note.created_at }} by {{ note.author.name }}</small><br>
+        <a class="button" href="{% url 'view_note' note.id %}">View</a>
+        <a class="button" href="{% url 'edit_note' note.id %}">Edit</a>
+        <a class="button" href="{% url 'delete_note' note.id %}">Delete</a>
+    </div>
+{% empty %}
+    <p>No notes found for this author.</p>
+{% endfor %}
+<a class="button" href="{% url 'index' %}">Back to all notes</a>
+{% endblock %}

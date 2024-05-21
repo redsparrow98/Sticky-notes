@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Note{% endblock %}
+
+{% block content %}
+<!-- Form for adding a new note -->
+<h2>Add a New Note</h2>
+<form method="post">
+    {% csrf_token %}
+	<!-- Title input field -->
+    <label for="title">Title:</label><br>
+    <input type="text" name="title" id="title"><br><br>
+
+	<!-- Content textarea field -->
+    <label for="content">Content:</label><br>
+    <textarea name="content" id="content" rows="5" cols="30"></textarea><br><br>
+
+	<!-- Author name input field -->
+    <label for="author_name">Your Name:</label><br>
+    <input type="text" name="author_name" id="author_name"><br><br>
+
+	<!-- Submit button -->
+    <button type="submit">Add Note</button>
+</form>
+<!-- Link to go back to the notes list -->
+<a class="button" href="{% url 'index' %}">Back to notes</a>
+{% endblock %}

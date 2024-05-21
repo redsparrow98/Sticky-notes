@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit Note{% endblock %}
+
+{% block content %}
+<!-- Form for editing a note -->
+<h2>Edit Note</h2>
+<form method="post">
+    {% csrf_token %}
+	<!-- Title input field with current note's title pre-filled -->
+    <label for="title">Title:</label><br>
+    <input type="text" name="title" id="title" value="{{ note.title }}"><br><br>
+
+	<!-- Content textarea field with current note's content pre-filled -->
+    <label for="content">Content:</label><br>
+    <textarea name="content" id="content" rows="5" cols="30">{{ note.content }}</textarea><br>
+
+	<!-- Submit button -->
+    <button type="submit">Save Note</button>
+</form>
+
+<!-- Link to go back to the notes list -->
+<a class="button" href="{% url 'index' %}">Back to notes</a>
+{% endblock %}
+

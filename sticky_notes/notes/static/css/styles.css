@@ -1,0 +1,90 @@
+/* Colors for reference */
+/* Dark purple  -  #7469B6  */
+/* 2nd paler purple  -  #AD88C6  */
+/* 3rd paler purple  -  #E1AFD1  */
+/* pale pink  -  #FFE6E6  */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9; /* Light gray background */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%; /* Width of 80% of the viewport */
+    margin: auto; /* Center the container */
+    overflow: hidden; /* Clear floats inside container */
+}
+
+header {
+    background: #7469B6; /* Dark purple */
+    color: #FFE6E6; /* Pale pink text color */
+    padding: 30px 0; /* Top and bottom padding */
+    min-height: 70px; /* Minimum height */
+    border-bottom: 3px solid #FFE6E6; /* Bottom border */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+header a {
+    color: #FFE6E6; /* Pale pink text color */
+    text-decoration: none; /* Remove underlines */
+    text-transform: uppercase; /* Uppercase text */
+    font-size: 16px; /* Font size */
+    margin: 0 15px; /* Margin around links */
+    padding: 5px 10px; /* Padding for better click area */
+    transition: background-color 0.3s; /* Smooth transition for hover */
+}
+
+header a:hover {
+    background-color: #AD88C6; /* 2nd paler purple on hover */
+    border-radius: 5px; /* Rounded corners on hover */
+}
+
+nav {
+    float: right; /* Float navigation to the right */
+    margin-top: 10px; /* Top margin */
+}
+
+nav ul {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    list-style: none; /* Remove default list style */
+}
+
+nav li {
+    display: inline; /* Display items inline */
+}
+
+.note {
+    margin: 20px 0; /* Margin around notes */
+    padding: 15px; /* Padding inside notes */
+    border: 1px solid #E1AFD1; /* Border around notes */
+    background-color: #fff; /* White background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition */
+}
+
+.note:hover {
+    transform: scale(1.02); /* Slight scale up on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Darker shadow on hover */
+}
+
+.button {
+    display: inline-block; /* Display as inline block */
+    color: #FFE6E6; /* Pale pink text color */
+    background: #7469B6; /* Dark purple background */
+    padding: 10px 15px; /* Padding inside buttons */
+    text-align: center; /* Center text */
+    text-decoration: none; /* Remove underlines */
+    border-radius: 5px; /* Rounded corners */
+    margin: 5px 0; /* Margin around buttons */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition */
+}
+
+.button:hover {
+    background: #AD88C6; /* 2nd paler purple on hover */
+    transform: scale(1.05); /* Slight scale up on hover */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
+}

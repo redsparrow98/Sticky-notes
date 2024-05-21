@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Sticky Notes{% endblock %}</title>
+    <!-- Link to the CSS styles -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <!-- Header title -->
+            <h1>Sticky Notes</h1>
+            <!-- Navigation links -->
+            <nav>
+                <ul>
+                    <li><a href="{% url 'index' %}">Home</a></li> <!-- Link to the home page -->
+                    <li><a href="{% url 'add_note' %}">Add Note</a></li> <!-- Link to add a new note -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <!-- Search form for searching notes by author -->
+        <form method="get" action="{% url 'search_author' %}" style="margin-bottom: 20px;">
+            <input type="text" name="author_name" placeholder="Search by author name">
+            <button type="submit">Search</button>
+        </form>
+        <!-- Content block to be extended in the templates -->
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

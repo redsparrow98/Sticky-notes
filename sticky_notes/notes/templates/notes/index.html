@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Sticky Notes - Home{% endblock %}
+
+{% block content %}
+<!-- Display a list of notes -->
+<h2>Notes</h2>
+{% for note in notes %}
+	<!-- Display each note -->
+    <div class="note">
+		<!-- Note title -->
+        <h2>{{ note.title }}</h2>
+		<!-- Note content -->
+        <p>{{ note.content }}</p>
+
+		<!-- Note metadata: created at and author name -->
+        <small>Created at: {{ note.created_at }} by {{ note.author.name }}</small><br>
+
+		<!-- Links to view, edit, and delete the note -->
+        <a class="button" href="{% url 'view_note' note.id %}">View</a>
+        <a class="button" href="{% url 'edit_note' note.id %}">Edit</a>
+        <a class="button" href="{% url 'delete_note' note.id %}">Delete</a>
+    </div>
+{% empty %}
+
+	<!-- Display message if there are no notes -->
+    <p>No notes yet!</p>
+{% endfor %}
+{% endblock %}
